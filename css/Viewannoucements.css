@@ -1,0 +1,126 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	 font-family: cursive;
+     background-color:linear-gradient(120deg,#5a459a, #58af44);
+}
+
+.table-section{
+  height:700px;
+  
+  overflow:auto;
+}
+table {
+width: 700px;
+border-collapse: inherit;
+border-radius:100px;
+margin-top:50px;
+margin-left:150px;
+}
+.header{
+  background: black;
+color: white;
+font-weight: bold;
+text-align:center;
+border-radius:15px;
+padding: 10px;
+border: 1px solid #ffcd02;
+
+font-size: 18px;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+background: #8dd4c0;
+}
+tr:nth-of-type(even) {
+background: #924fc5ad;
+}
+th {
+background: black;
+color: white;
+font-weight: bold;
+text-align:center;
+border-radius:15px;
+padding: 10px;
+}
+.link{
+    text-align: right;
+   padding-bottom: 5px;
+   padding-right:50px;
+}
+td, th {
+
+border: 1px solid #ffcd02;
+
+font-size: 18px;
+}
+td{
+   
+    padding-top:15px;
+    padding-bottom:0px;
+    text-align:left;
+   padding-left:15px;
+    border-radius: 15px;
+}
+td:hover{
+    background-color: rgba(234, 96, 229, 0.877);
+    transform: scale(1.02);
+    box-shadow: 2px 2px 12px 3px rgb(25, 27, 85);
+}
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+table {
+    width: 100%;
+}
+
+/* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr {
+  display: block;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+tr { border: 1px solid #ccc; }
+
+td {
+  /* Behave  like a "row" */
+  border: none;
+  border-bottom: 1px solid #eee;
+  position: relative;
+
+  padding-left: 50%;
+}
+
+td:before {
+  /* Now like a table header */
+  position: absolute;
+  /* Top/left values mimic padding */
+  top: 6px;
+  left: 6px;
+  width: 45%;
+  padding-right: 10px;
+  white-space: nowrap;
+  /* Label the data */
+  content: attr(data-column);
+
+  color: #000;
+  font-weight: bold;
+}
+
+
+}
+
